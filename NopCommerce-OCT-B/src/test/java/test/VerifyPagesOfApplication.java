@@ -42,7 +42,19 @@ public class VerifyPagesOfApplication
 		  computerPage = new ComputerPage(driver);
 	      electronicsPage = new ElectronicsPage(driver);
 	   }
-	 
+	   @Test
+	   public void toVerifyComputersPageTab()
+	   {
+		  System.out.println("to Verify Computers Page Tab");
+		  homePage.openComputersPage();
+		  String url = driver.getCurrentUrl();
+		  String title = driver.getTitle();
+		  //expected is equals to actual the test PASS
+		  //expected is not equals to actual the test FAIL
+		    Assert.assertEquals(url, "https://opensource-demo.orangehrmlive.com/index.php/dashboard");
+		    Assert.assertEquals(title,"OrangeHRM");
+		 
+	    }
 	   @Test
 	   public void toVerifyElectronicsTab()
 	      {
